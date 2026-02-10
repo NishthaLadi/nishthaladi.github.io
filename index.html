@@ -5,23 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nishtha Ladi | Portfolio</title>
 
-  <!-- Optional: cleaner font (no build tools needed) -->
+  <!-- Inter font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg: #0b0c10;
-      --card: rgba(255,255,255,0.06);
-      --card2: rgba(255,255,255,0.08);
-      --ink: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.68);
-      --ring: rgba(255,255,255,0.14);
-      --brand: #ffffff;
-      --accent: #7c5cff;
-      --accent2:#27e0a3;
-      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      /* Option D — Paper / Editorial */
+      --bg: #f6f2ea;
+      --paper: #fbf8f2;
+      --ink: rgba(17,19,24,0.92);
+      --muted: rgba(17,19,24,0.62);
+      --ring: rgba(17,19,24,0.12);
+
+      --accent: #3b5bdb;
+      --accent2:#0ca678;
+
+      --shadow: 0 14px 35px rgba(17,19,24,0.10);
+      --shadow2: 0 10px 26px rgba(17,19,24,0.08);
     }
 
     *{box-sizing:border-box}
@@ -30,22 +32,21 @@
       margin:0;
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
       background:
-        radial-gradient(1000px 600px at 15% 0%, rgba(124,92,255,0.25), transparent 55%),
-        radial-gradient(900px 500px at 90% 10%, rgba(39,224,163,0.18), transparent 55%),
-        var(--bg);
+        radial-gradient(900px 520px at 12% 0%, rgba(59,91,219,0.12), transparent 55%),
+        radial-gradient(900px 520px at 90% 10%, rgba(12,166,120,0.10), transparent 55%),
+        linear-gradient(180deg, #fbf8f2, #f3ede4);
       color:var(--ink);
-      line-height:1.5;
+      line-height:1.55;
     }
 
     .container{max-width:1080px;margin:0 auto;padding:0 20px}
 
     /* Header */
-    header{
-      padding:72px 0 22px;
-    }
+    header{padding:72px 0 18px}
+
     .hero{
       border:1px solid var(--ring);
-      background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.82));
       border-radius:22px;
       padding:28px 24px;
       box-shadow:var(--shadow);
@@ -55,26 +56,29 @@
     .hero:before{
       content:"";
       position:absolute; inset:-2px;
-      background: radial-gradient(500px 250px at 20% 0%, rgba(124,92,255,0.35), transparent 60%),
-                  radial-gradient(500px 250px at 80% 20%, rgba(39,224,163,0.25), transparent 60%);
-      filter:blur(12px);
-      opacity:.55;
+      background:
+        radial-gradient(520px 260px at 18% 0%, rgba(59,91,219,0.14), transparent 60%),
+        radial-gradient(520px 260px at 82% 20%, rgba(12,166,120,0.10), transparent 60%);
+      filter:blur(14px);
+      opacity:.65;
       pointer-events:none;
     }
     .hero > *{position:relative; z-index:1}
+
     h1{
       margin:0;
       font-size:44px;
       letter-spacing:-0.03em;
-      font-weight:800;
+      font-weight:900;
+      color: rgba(17,19,24,0.95);
     }
     .headline{
       margin:12px 0 0;
       color:var(--muted);
       font-size:15px;
-      font-weight:500;
+      font-weight:600;
     }
-    .headline .dot{opacity:.5; margin:0 8px}
+    .headline .dot{opacity:.45; margin:0 8px}
 
     .toplinks{
       margin-top:18px;
@@ -90,22 +94,22 @@
       padding:10px 14px;
       border-radius:999px;
       border:1px solid var(--ring);
-      background:rgba(255,255,255,0.06);
-      color:var(--ink);
+      background:rgba(255,255,255,0.70);
+      color:rgba(17,19,24,0.92);
       text-decoration:none;
-      font-weight:600;
+      font-weight:800;
       font-size:13px;
       transition:transform .15s ease, background .15s ease, border-color .15s ease;
     }
     .pill:hover{
       transform:translateY(-1px);
-      background:rgba(255,255,255,0.09);
-      border-color:rgba(255,255,255,0.24);
+      background:rgba(255,255,255,0.90);
+      border-color:rgba(17,19,24,0.20);
     }
     .pill.primary{
-      background:linear-gradient(90deg, rgba(124,92,255,0.9), rgba(39,224,163,0.85));
+      background: linear-gradient(90deg, rgba(59,91,219,0.95), rgba(12,166,120,0.90));
       border-color:transparent;
-      color:#0b0c10;
+      color:white;
     }
 
     /* Tabs */
@@ -114,8 +118,8 @@
       top:0;
       z-index:50;
       backdrop-filter: blur(10px);
-      background:rgba(11,12,16,0.72);
-      border-bottom:1px solid rgba(255,255,255,0.08);
+      background: rgba(246,242,234,0.78);
+      border-bottom:1px solid var(--ring);
     }
     .tabs .container{
       display:flex;
@@ -125,25 +129,25 @@
     }
     .tab{
       appearance:none;
-      border:1px solid rgba(255,255,255,0.14);
-      background:rgba(255,255,255,0.05);
-      color:var(--ink);
+      border:1px solid var(--ring);
+      background: rgba(255,255,255,0.55);
+      color:rgba(17,19,24,0.86);
       border-radius:999px;
       padding:10px 14px;
       font-size:13px;
-      font-weight:700;
+      font-weight:900;
       letter-spacing:.02em;
       cursor:pointer;
       transition: background .15s ease, border-color .15s ease, transform .15s ease;
     }
     .tab:hover{
       transform:translateY(-1px);
-      border-color:rgba(255,255,255,0.26);
-      background:rgba(255,255,255,0.08);
+      border-color:rgba(17,19,24,0.20);
+      background:rgba(255,255,255,0.82);
     }
     .tab.active{
-      background:rgba(255,255,255,0.92);
-      color:#0b0c10;
+      background:rgba(17,19,24,0.92);
+      color:white;
       border-color:transparent;
     }
     .spacer{flex:1}
@@ -152,16 +156,17 @@
 
     /* Panels + Cards */
     .panel-title{
-      margin:0 0 14px;
+      margin:0 0 10px;
       font-size:20px;
-      font-weight:800;
+      font-weight:900;
       letter-spacing:-0.02em;
+      color: rgba(17,19,24,0.92);
     }
     .subnote{
       margin:0 0 18px;
       color:var(--muted);
       font-size:14px;
-      font-weight:500;
+      font-weight:600;
     }
 
     .grid{
@@ -174,29 +179,29 @@
     }
 
     .card{
-      border:1px solid rgba(255,255,255,0.12);
-      background:rgba(255,255,255,0.06);
+      border:1px solid var(--ring);
+      background: rgba(255,255,255,0.78);
       border-radius:18px;
       padding:18px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+      box-shadow: var(--shadow2);
       transition:transform .15s ease, background .15s ease, border-color .15s ease;
     }
     .card:hover{
       transform:translateY(-2px);
-      background:rgba(255,255,255,0.08);
-      border-color:rgba(255,255,255,0.22);
+      background:rgba(255,255,255,0.92);
+      border-color:rgba(17,19,24,0.20);
     }
     .card h3{
       margin:0 0 8px;
       font-size:16px;
-      font-weight:800;
+      font-weight:900;
       letter-spacing:-0.01em;
     }
     .card p{
       margin:0;
       color:var(--muted);
       font-size:14px;
-      font-weight:500;
+      font-weight:600;
     }
 
     .proj-meta{
@@ -208,52 +213,74 @@
     }
     .tag{
       font-size:12px;
-      font-weight:700;
-      color:rgba(255,255,255,0.78);
-      border:1px solid rgba(255,255,255,0.14);
+      font-weight:900;
+      color: rgba(17,19,24,0.75);
+      border:1px solid var(--ring);
       padding:6px 10px;
       border-radius:999px;
-      background:rgba(255,255,255,0.05);
+      background: rgba(255,255,255,0.60);
     }
     .proj-link{
       display:inline-flex;
       align-items:center;
       gap:8px;
       text-decoration:none;
-      font-weight:800;
-      color:var(--brand);
+      font-weight:900;
+      color: rgba(17,19,24,0.92);
     }
     .proj-link:hover{opacity:.9; text-decoration:underline}
     .proj-link small{
-      font-weight:700;
-      color:rgba(255,255,255,0.72);
+      font-weight:800;
+      color: rgba(17,19,24,0.65);
       text-decoration:none;
     }
 
     .empty{
-      border:1px dashed rgba(255,255,255,0.18);
-      background:rgba(255,255,255,0.04);
+      border:1px dashed rgba(17,19,24,0.22);
+      background: rgba(255,255,255,0.60);
       border-radius:18px;
       padding:22px;
-      color:rgba(255,255,255,0.65);
-      font-weight:600;
+      color: rgba(17,19,24,0.65);
+      font-weight:700;
     }
 
+    /* About section layout */
+    .about-wrap{display:grid; gap:14px}
+    .about-card{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      border:1px solid var(--ring);
+      background: rgba(255,255,255,0.78);
+      border-radius:18px;
+      padding:18px;
+      box-shadow: var(--shadow2);
+    }
+    .avatar{
+      width:96px; height:96px; border-radius:18px;
+      object-fit:cover;
+      border:1px solid var(--ring);
+      background: rgba(17,19,24,0.06);
+    }
+    .about-name{font-size:18px; font-weight:900; letter-spacing:-0.01em}
+    .about-line{margin-top:6px; color:var(--muted); font-weight:700; font-size:14px}
+    .about-cta{margin-top:12px; display:flex; gap:10px; flex-wrap:wrap}
+
     footer{
-      border-top:1px solid rgba(255,255,255,0.10);
-      background:rgba(255,255,255,0.03);
+      border-top:1px solid var(--ring);
+      background: rgba(255,255,255,0.40);
     }
     footer .container{
       padding:16px 20px;
       font-size:13px;
-      color:rgba(255,255,255,0.62);
+      color: rgba(17,19,24,0.70);
       display:flex;
       gap:10px;
       flex-wrap:wrap;
       align-items:center;
       justify-content:space-between;
     }
-    footer a{color:rgba(255,255,255,0.78); text-decoration:none; font-weight:700}
+    footer a{color: rgba(17,19,24,0.78); text-decoration:none; font-weight:900}
     footer a:hover{text-decoration:underline}
   </style>
 </head>
@@ -291,14 +318,55 @@
   </nav>
 
   <main class="container">
-    <!-- About (empty) -->
+    <!-- About -->
     <section id="about" class="tab-panel">
       <h2 class="panel-title">About Me</h2>
-      <p class="subnote">Coming soon.</p>
-      <div class="empty">This section is intentionally empty for now.</div>
+      <p class="subnote">A quick snapshot of what I’m into right now.</p>
+
+      <div class="about-wrap">
+        <div class="about-card">
+          <!-- Put your photo in your repo and update the path below, e.g. assets/me.jpg -->
+          <img class="avatar" src="assets/me.jpg" alt="Photo of Nishtha Ladi" />
+          <div>
+            <div class="about-name">Nishtha Ladi</div>
+            <div class="about-line">
+              Computer Engineering (ML) @ Boston University • Research + build-minded • Dance captain energy
+            </div>
+
+            <div class="about-cta">
+              <a class="pill primary" href="mailto:nishtha.ladi@gmail.com">Email</a>
+              <a class="pill" href="https://www.linkedin.com/in/nishtha-ladi-005232318" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a class="pill" href="1 Page Resume_Nishtha Ladi_Sep25.docx.pdf" target="_blank" rel="noreferrer">Resume</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Interests</h3>
+            <p>Agentic systems • LLMs • ML for systems/HPC • Computer vision • Product + engineering leadership</p>
+            <div class="proj-meta">
+              <span class="tag">Agentic AI</span>
+              <span class="tag">HPC</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Systems</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Currently</h3>
+            <p>Building and researching in energy-efficient computing, while shipping projects that blend ML with real workflows.</p>
+            <div class="proj-meta">
+              <span class="tag">Research</span>
+              <span class="tag">Shipping</span>
+              <span class="tag">Impact</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Projects (filled) -->
+    <!-- Projects -->
     <section id="projects" class="tab-panel" hidden>
       <h2 class="panel-title">Projects</h2>
       <p class="subnote">A few things I’ve built and am actively building.</p>
@@ -382,18 +450,53 @@
       </div>
     </section>
 
-    <!-- BU (empty) -->
+    <!-- BU (empty for now) -->
     <section id="bu" class="tab-panel" hidden>
       <h2 class="panel-title">BU</h2>
       <p class="subnote">Coming soon.</p>
       <div class="empty">This section is intentionally empty for now.</div>
     </section>
 
-    <!-- Dance (empty) -->
+    <!-- Dance -->
     <section id="dance" class="tab-panel" hidden>
       <h2 class="panel-title">Dance</h2>
-      <p class="subnote">Coming soon.</p>
-      <div class="empty">This section is intentionally empty for now.</div>
+      <p class="subnote">Classical training + competitive Bollywood fusion.</p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>
+            <a class="proj-link" href="https://www.youtube.com/playlist?list=PLyPLzVFqJ4OjnjKPnJIZMFrw0ZDeAKmTk"
+               target="_blank" rel="noreferrer">
+              Odissi — Mancha Pravesh (2021)
+            </a>
+          </h3>
+          <p>
+            Playlist of 6 performances showcasing my Odissi training and my Mancha Pravesh in 2021.
+          </p>
+          <div class="proj-meta">
+            <span class="tag">Odissi</span>
+            <span class="tag">Classical</span>
+            <span class="tag">Performance</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>
+            <a class="proj-link" href="https://www.youtube.com/watch?v=U2fMY7DYcSQ&list=RDU2fMY7DYcSQ&start_radio=1"
+               target="_blank" rel="noreferrer">
+              BU Jalwa — Best Lead (x2)
+            </a>
+          </h3>
+          <p>
+            Captain of New England’s premier Bollywood Fusion Dance Team (BU Jalwa) — won the title of Best Lead twice.
+          </p>
+          <div class="proj-meta">
+            <span class="tag">Bollywood Fusion</span>
+            <span class="tag">Captain</span>
+            <span class="tag">Awards</span>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -413,10 +516,10 @@
       const id = btn.dataset.tab;
       tabs.forEach((b) => b.classList.toggle("active", b === btn));
       panels.forEach((p) => (p.hidden = p.id !== id));
-      history.replaceState(null, "", "#" + id); // optional: deep-link to tab
+      history.replaceState(null, "", "#" + id); // deep-link to tab
     }));
 
-    // Optional: open correct tab if URL has #hash
+    // Open correct tab if URL has #hash
     const hash = (location.hash || "").replace("#", "");
     if (hash) {
       const target = document.querySelector(`.tab[data-tab="${hash}"]`);
@@ -427,5 +530,4 @@
   </script>
 </body>
 </html>
-
-
+   
