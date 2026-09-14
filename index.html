@@ -3,497 +3,582 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Nishtha Ladi — Computer Engineering student, ML researcher, and builder at Boston University." />
   <title>Nishtha Ladi | Portfolio</title>
 
-  <!-- Inter font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      /* Option D — Paper / Editorial */
-      --bg: #f6f2ea;
-      --paper: #fbf8f2;
-      --ink: rgba(17,19,24,0.92);
-      --muted: rgba(17,19,24,0.62);
-      --ring: rgba(17,19,24,0.12);
-
-      --accent: #3b5bdb;
-      --accent2:#0ca678;
-
-      --shadow: 0 14px 35px rgba(17,19,24,0.10);
-      --shadow2: 0 10px 26px rgba(17,19,24,0.08);
+    :root {
+      --bg: #f7f5f1;
+      --surface: #fffdf9;
+      --ink: #1c1c1a;
+      --muted: #6e6b64;
+      --line: #dedbd3;
+      --accent: #6b4eff;
+      --accent-soft: #ece8ff;
+      --max: 1160px;
+      --radius: 24px;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      background:
-        radial-gradient(900px 520px at 12% 0%, rgba(59,91,219,0.12), transparent 55%),
-        radial-gradient(900px 520px at 90% 10%, rgba(12,166,120,0.10), transparent 55%),
-        linear-gradient(180deg, #fbf8f2, #f3ede4);
-      color:var(--ink);
-      line-height:1.55;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
     }
 
-    .container{max-width:1080px;margin:0 auto;padding:0 20px}
+    a { color: inherit; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
 
-    /* Header */
-    header{padding:72px 0 18px}
-
-    .hero{
-      border:1px solid var(--ring);
-      background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.82));
-      border-radius:22px;
-      padding:28px 24px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .hero:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(520px 260px at 18% 0%, rgba(59,91,219,0.14), transparent 60%),
-        radial-gradient(520px 260px at 82% 20%, rgba(12,166,120,0.10), transparent 60%);
-      filter:blur(14px);
-      opacity:.65;
-      pointer-events:none;
-    }
-    .hero > *{position:relative; z-index:1}
-
-    h1{
-      margin:0;
-      font-size:44px;
-      letter-spacing:-0.03em;
-      font-weight:900;
-      color: rgba(17,19,24,0.95);
-    }
-    .headline{
-      margin:12px 0 0;
-      color:var(--muted);
-      font-size:15px;
-      font-weight:600;
-    }
-    .headline .dot{opacity:.45; margin:0 8px}
-
-    .toplinks{
-      margin-top:18px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid var(--ring);
-      background:rgba(255,255,255,0.70);
-      color:rgba(17,19,24,0.92);
-      text-decoration:none;
-      font-weight:800;
-      font-size:13px;
-      transition:transform .15s ease, background .15s ease, border-color .15s ease;
-    }
-    .pill:hover{
-      transform:translateY(-1px);
-      background:rgba(255,255,255,0.90);
-      border-color:rgba(17,19,24,0.20);
-    }
-    .pill.primary{
-      background: linear-gradient(90deg, rgba(59,91,219,0.95), rgba(12,166,120,0.90));
-      border-color:transparent;
-      color:white;
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,245,241,.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(222,219,211,.8);
     }
 
-    /* Tabs */
-    .tabs{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(246,242,234,0.78);
-      border-bottom:1px solid var(--ring);
-    }
-    .tabs .container{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 20px;
-    }
-    .tab{
-      appearance:none;
-      border:1px solid var(--ring);
-      background: rgba(255,255,255,0.55);
-      color:rgba(17,19,24,0.86);
-      border-radius:999px;
-      padding:10px 14px;
-      font-size:13px;
-      font-weight:900;
-      letter-spacing:.02em;
-      cursor:pointer;
-      transition: background .15s ease, border-color .15s ease, transform .15s ease;
-    }
-    .tab:hover{
-      transform:translateY(-1px);
-      border-color:rgba(17,19,24,0.20);
-      background:rgba(255,255,255,0.82);
-    }
-    .tab.active{
-      background:rgba(17,19,24,0.92);
-      color:white;
-      border-color:transparent;
-    }
-    .spacer{flex:1}
-
-    main{padding:26px 0 56px}
-
-    /* Panels + Cards */
-    .panel-title{
-      margin:0 0 10px;
-      font-size:20px;
-      font-weight:900;
-      letter-spacing:-0.02em;
-      color: rgba(17,19,24,0.92);
-    }
-    .subnote{
-      margin:0 0 18px;
-      color:var(--muted);
-      font-size:14px;
-      font-weight:600;
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
-    }
-    @media(min-width:860px){
-      .grid{grid-template-columns:repeat(2, 1fr)}
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      font-weight: 600;
+      text-decoration: none;
     }
 
-    .card{
-      border:1px solid var(--ring);
-      background: rgba(255,255,255,0.78);
-      border-radius:18px;
-      padding:18px;
-      box-shadow: var(--shadow2);
-      transition:transform .15s ease, background .15s ease, border-color .15s ease;
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      transition: color .2s ease;
     }
-    .card:hover{
-      transform:translateY(-2px);
-      background:rgba(255,255,255,0.92);
-      border-color:rgba(17,19,24,0.20);
-    }
-    .card h3{
-      margin:0 0 8px;
-      font-size:16px;
-      font-weight:900;
-      letter-spacing:-0.01em;
-    }
-    .card p{
-      margin:0;
-      color:var(--muted);
-      font-size:14px;
-      font-weight:600;
+    .nav-links a:hover { color: var(--ink); }
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      align-items: center;
+      padding: 90px 0 70px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .proj-meta{
-      margin-top:12px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .tag{
-      font-size:12px;
-      font-weight:900;
-      color: rgba(17,19,24,0.75);
-      border:1px solid var(--ring);
-      padding:6px 10px;
-      border-radius:999px;
-      background: rgba(255,255,255,0.60);
-    }
-    .proj-link{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      text-decoration:none;
-      font-weight:900;
-      color: rgba(17,19,24,0.92);
-    }
-    .proj-link:hover{opacity:.9; text-decoration:underline}
-    .proj-link small{
-      font-weight:800;
-      color: rgba(17,19,24,0.65);
-      text-decoration:none;
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      right: -180px;
+      top: 40px;
+      background: radial-gradient(circle, rgba(107,78,255,.18), rgba(107,78,255,0) 68%);
+      pointer-events: none;
     }
 
-    .empty{
-      border:1px dashed rgba(17,19,24,0.22);
-      background: rgba(255,255,255,0.60);
-      border-radius:18px;
-      padding:22px;
-      color: rgba(17,19,24,0.65);
-      font-weight:700;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
     }
 
-    /* About section layout */
-    .about-wrap{display:grid; gap:14px}
-    .about-card{
-      display:flex;
-      gap:16px;
-      align-items:center;
-      border:1px solid var(--ring);
-      background: rgba(255,255,255,0.78);
-      border-radius:18px;
-      padding:18px;
-      box-shadow: var(--shadow2);
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
     }
-    .avatar{
-      width:96px; height:96px; border-radius:18px;
-      object-fit:cover;
-      border:1px solid var(--ring);
-      background: rgba(17,19,24,0.06);
-    }
-    .about-name{font-size:18px; font-weight:900; letter-spacing:-0.01em}
-    .about-line{margin-top:6px; color:var(--muted); font-weight:700; font-size:14px}
-    .about-cta{margin-top:12px; display:flex; gap:10px; flex-wrap:wrap}
 
-    footer{
-      border-top:1px solid var(--ring);
-      background: rgba(255,255,255,0.40);
+    h1 {
+      max-width: 920px;
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(56px, 8vw, 104px);
+      line-height: .98;
+      letter-spacing: -.045em;
+      font-weight: 600;
     }
-    footer .container{
-      padding:16px 20px;
-      font-size:13px;
-      color: rgba(17,19,24,0.70);
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
+
+    h1 em { color: var(--accent); font-weight: 600; }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(260px, .55fr);
+      gap: 56px;
+      align-items: center;
     }
-    footer a{color: rgba(17,19,24,0.78); text-decoration:none; font-weight:900}
-    footer a:hover{text-decoration:underline}
+
+    .hero-photo-wrap {
+      position: relative;
+      justify-self: end;
+      width: min(100%, 360px);
+    }
+
+    .hero-photo-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 18px -18px -18px 18px;
+      border-radius: 32px;
+      background: var(--accent-soft);
+      z-index: 0;
+    }
+
+    .hero-photo {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border-radius: 32px;
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 60px rgba(35,30,25,.12);
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      margin: 32px 0 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 20px);
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      background: var(--surface);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .button:hover { transform: translateY(-2px); border-color: #bbb6aa; }
+    .button.primary { background: var(--ink); color: white; border-color: var(--ink); }
+    .button.primary:hover { background: var(--accent); border-color: var(--accent); }
+
+    section { padding: 90px 0; border-top: 1px solid var(--line); }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 40px;
+      margin-bottom: 46px;
+      align-items: start;
+    }
+
+    .section-label {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+      font-weight: 600;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+    }
+
+    .about-card, .info-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      padding: 30px;
+    }
+
+    .about-card p { margin: 0; color: var(--muted); font-size: 17px; }
+    .about-card p + p { margin-top: 18px; }
+
+    .stat { padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .stat:first-child { padding-top: 0; }
+    .stat:last-child { border-bottom: 0; padding-bottom: 0; }
+    .stat strong { display: block; font-size: 16px; margin-bottom: 3px; }
+    .stat span { color: var(--muted); font-size: 14px; }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      min-height: 260px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: #c9c3b8;
+      box-shadow: 0 20px 50px rgba(35,30,25,.08);
+    }
+
+    .project-number {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      margin-bottom: 36px;
+    }
+
+    .project h3 {
+      margin: 0 0 12px;
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+    }
+
+    .project p {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 560px;
+    }
+
+    .project-link {
+      margin-top: auto;
+      width: fit-content;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .project-link:hover { color: var(--accent); border-color: var(--accent); }
+
+    .timeline { display: grid; gap: 0; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 36px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-item:first-child { padding-top: 0; }
+    .timeline-item:last-child { border-bottom: 0; padding-bottom: 0; }
+    .timeline-date { color: var(--muted); font-size: 13px; font-weight: 600; }
+    .timeline-item h3 { margin: 0; font-size: 19px; }
+    .timeline-item .role { margin: 4px 0 8px; color: var(--accent); font-weight: 600; font-size: 14px; }
+    .timeline-item p { margin: 0; color: var(--muted); font-size: 15px; max-width: 760px; }
+
+    .dance-card {
+      border-radius: var(--radius);
+      padding: 42px;
+      background: var(--ink);
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+      align-items: end;
+    }
+
+    .dance-card p { color: rgba(255,255,255,.68); margin: 18px 0 0; }
+    .dance-links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+    .dance-links .button { background: transparent; color: white; border-color: rgba(255,255,255,.28); }
+
+    footer { padding: 38px 0 48px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 13px; }
+    .footer-inner a { text-decoration: none; font-weight: 600; }
+
+    @media (max-width: 760px) {
+      .nav-links a:not(:last-child) { display: none; }
+      .hero { min-height: auto; padding: 76px 0 60px; }
+      .hero-layout, .section-head, .about-grid, .dance-card { grid-template-columns: 1fr; }
+      .hero-photo-wrap { justify-self: start; width: min(82%, 340px); margin-top: 24px; }
+      .projects { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 1fr; gap: 7px; }
+      .dance-links { justify-content: flex-start; }
+      section { padding: 68px 0; }
+    }
   </style>
 </head>
 
 <body>
-  <!-- Intro / Header -->
-  <header>
-    <div class="container">
-      <div class="hero">
-        <h1>Nishtha Ladi</h1>
-        <p class="headline">
-          Presidential Scholar &amp; Dean’s List @ Boston University • Computer Engineering (ML Concentration)
-          <span class="dot">•</span>
-          Dance &amp; Sports Enthusiast
-        </p>
+  <nav>
+    <div class="container nav-inner">
+      <a class="logo" href="#top">NL.</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#dance">Dance</a>
+        <a href="mailto:ladi21@bu.edu">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-        <div class="toplinks">
-          <a class="pill primary" href="mailto:nishtha.ladi@gmail.com">Email</a>
-          <a class="pill" href="https://www.linkedin.com/in/nishtha-ladi-005232318" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="pill" href="1 Page Resume_Nishtha Ladi_Sep25.docx.pdf" target="_blank" rel="noreferrer">Resume</a>
+  <header class="hero" id="top">
+    <div class="container">
+      <div class="hero-layout">
+        <div>
+          <div class="eyebrow">Boston University · Computer Engineering</div>
+          <h1>Building at the intersection of <em>intelligence and engineering.</em></h1>
+          <p class="hero-copy">
+            I’m Nishtha Ladi, a Computer Engineering student concentrating in Machine Learning. My work spans AI/ML, cloud systems, high-performance computing, health data, and software engineering.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">View my work ↓</a>
+            <a class="button" href="https://www.linkedin.com/in/nishtha-ladi-005232318" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a class="button" href="1 Page Resume_Nishtha Ladi_Sept26.docx" target="_blank" rel="noreferrer">Resume ↗</a>
+          </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <img class="hero-photo" src="Ladi_Nishtha_500-_1029-Retouched.jpg" alt="Portrait of Nishtha Ladi" />
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Tabs -->
-  <nav class="tabs">
-    <div class="container">
-      <button class="tab active" data-tab="about">About Me</button>
-      <button class="tab" data-tab="projects">Projects</button>
-      <button class="tab" data-tab="bu">BU</button>
-      <button class="tab" data-tab="dance">Dance</button>
-      <div class="spacer"></div>
-    </div>
-  </nav>
+  <main>
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">01 / About</p>
+          <h2>Engineering, research, and leadership — with curiosity at the center.</h2>
+        </div>
 
-  <main class="container">
-    <!-- About -->
-    <section id="about" class="tab-panel">
-      <h2 class="panel-title">About Me</h2>
-      <p class="subnote">A quick snapshot of what I’m into right now.</p>
+        <div class="about-grid">
+          <div class="about-card">
+            <p>
+              I’m a Computer Engineering student at Boston University with a concentration in Machine Learning. I enjoy building systems that connect research with practical applications, from autonomous cloud software workflows and HPC resource prediction to patient triage and health-data analysis.
+            </p>
+            <p>
+              Outside engineering, I care deeply about mentorship, community, and dance. I serve in leadership at BU’s Society of Women Engineers, tutor engineering students, and have spent years performing both Odissi and competitive Bollywood fusion.
+            </p>
+          </div>
 
-      <div class="about-wrap">
-        <div class="about-card">
-          <!-- Put your photo in your repo and update the path below, e.g. assets/me.jpg -->
-          <img class="avatar" src="assets/me.jpg" alt="Photo of Nishtha Ladi" />
+          <div class="info-card">
+            <div class="stat"><strong>Boston University</strong><span>B.S. Computer Engineering · Expected May 2027</span></div>
+            <div class="stat"><strong>Accomplishments</strong><span>Presidential Scholar · Dean’s List · UROP Research Student · BU ECE Undergraduate Honor Society Member · Dean's Host for College of Engineering</span></div>
+            <div class="stat"><strong>Related Coursework</strong><span>Software Engineering · Data Structures and Algorithms · Software Design · Operating Systems · Cloud Computing · Machine Learning · AI</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">02 / Projects</p>
+          <h2>A selection of things I’ve researched, designed, and built.</h2>
+        </div>
+
+        <div class="projects">
+          <article class="project">
+            <div class="project-number">01</div>
+            <h3>MediQ</h3>
+            <p>AI-powered patient triage system designed to automate patient intake, assess risk, and support more efficient clinical workflows.</p>
+          </article>
+
+          <article class="project">
+            <div class="project-number">02</div>
+            <h3>Agentic Cloud Benchmark</h3>
+            <p>An open-source benchmark framework for evaluating autonomous cloud software workflows through automated build, test, and repair pipelines.</p>
+            <a class="project-link" href="https://github.com/BU-EC528-Spring-2026/Agentic_Cloud_Benchmark.git" target="_blank" rel="noreferrer">View repository ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="project-number">03</div>
+            <h3>Computer Networking Experimentation</h3>
+            <p>A collection of hands-on networking experiments exploring application-layer behavior, network protocols, packet captures, and communication across the Internet stack.</p>
+            <a class="project-link" href="https://github.com/NishthaLadi/ec441-assignments.git" target="_blank" rel="noreferrer">View repository ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="project-number">04</div>
+            <h3>HPC Resource Utilization & Prediction</h3>
+            <p>Research on high-performance computing workloads, including feature prediction and temporal resource-utilization analysis to support smarter allocation and safer job co-location.</p>
+            <a class="project-link" href="https://github.com/NishthaLadi-21/Fugaku.git" target="_blank" rel="noreferrer">View repository ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="project-number">05</div>
+            <h3>Othello Game</h3>
+            <p>A one- and two-player Othello implementation with complete board logic, move validation, gameplay state management, and computer-player behavior.</p>
+            <a class="project-link" href="https://github.com/NishthaLadi/Comp_proj_Othello" target="_blank" rel="noreferrer">View repository ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="project-number">06</div>
+            <h3>“Bug Fixing” Tetris Game</h3>
+            <p>A Tetris implementation centered on game logic, debugging, and systematic identification and repair of software defects.</p>
+            <a class="project-link" href="EC 327 Project_Group 4.pdf" target="_blank" rel="noreferrer">View project ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="project-number">07</div>
+            <h3>Digital Clock</h3>
+            <p>A digital clock designed in Verilog, translating timing and display requirements into a working digital hardware design.</p>
+            <a class="project-link" href="EC 311 - Final Project.pdf" target="_blank" rel="noreferrer">View project ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="project-number">08</div>
+            <h3>Air Quality Surveillance Data Analysis</h3>
+            <p>An exploratory analysis of air-quality surveillance data focused on extracting patterns, interpreting measurements, and communicating findings through data visualization.</p>
+            <a class="project-link" href="Air Quality Surveillance Data Analysis.pdf" target="_blank" rel="noreferrer">View analysis ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="project-number">09</div>
+            <h3>Smart Runner 4000</h3>
+            <p>An engineering design project developed from concept through final presentation and technical report, combining system design with iterative prototyping.</p>
+            <a class="project-link" href="EK210-Final_Presentation.pdf" target="_blank" rel="noreferrer">View presentation ↗</a>
+          </article>
+
+          <article class="project">
+            <div class="project-number">10</div>
+            <h3>Temperature Sensor Box</h3>
+            <p>A sensor-based engineering prototype built to measure temperature and demonstrate an end-to-end physical computing design.</p>
+            <a class="project-link" href="Ek131+-+FinalDemo+-+Nishtha+Ladi.pdf" target="_blank" rel="noreferrer">View project ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">03 / Experience</p>
+          <h2>Applying engineering across research, health, fintech, and education.</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">Aug 2026 — Present</div>
+            <div>
+              <h3>Boston University College of Engineering</h3>
+              <div class="role">Undergraduate Teaching Assistant & Engineering Tutor</div>
+              <p>Teach programming concepts and provide one-on-one tutoring across engineering subjects.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">May — Jul 2026</div>
+            <div>
+              <h3>Custom Health</h3>
+              <div class="role">AI/ML & Health Data Science Intern</div>
+              <p>Developed a longitudinal machine-learning pipeline to analyze medication adherence and identify patients at risk for earlier detection and intervention.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">Mar 2025 — Present</div>
+            <div>
+              <h3>PEACLab Research Group · Boston University</h3>
+              <div class="role">UROP Research Assistant</div>
+              <p>Analyze temporal resource imbalance in HPC applications and develop models for smarter runtime resource allocation and safe job co-location.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">May — Aug 2025</div>
+            <div>
+              <h3>PayGlocal</h3>
+              <div class="role">AI Software Development Intern</div>
+              <p>Built automation for risk underwriting and KYC/KYB verification, extracting decision-making information from merchant onboarding documents.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="leadership">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">04 / Leadership</p>
+          <h2>Building communities matters as much to me as building systems.</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2025 — Present</div>
+            <div>
+              <h3>Society of Women Engineers · Boston University</h3>
+              <div class="role">Vice President</div>
+              <p>Lead chapter initiatives, conference planning, and programming that supports women in engineering.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2024 — 2025</div>
+            <div>
+              <h3>Girls Who Code · Boston University</h3>
+              <div class="role">Bytes Facilitator</div>
+              <p>Mentored high school students and introduced them to Python programming and foundational AI/ML concepts.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">2020 — 2023</div>
+            <div>
+              <h3>Project Endelevu</h3>
+              <div class="role">Co-founder</div>
+              <p>Co-founded a sustainable-fashion initiative that upcycled 190 lbs of clothing, conserved 135,000+ liters of water, and was selected to present at the United Nations Headquarters.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dance">
+      <div class="container">
+        <div class="dance-card">
           <div>
-            <div class="about-name">Nishtha Ladi</div>
-            <div class="about-line">
-              Computer Engineering (ML) @ Boston University • Research + build-minded • Dance captain energy
-            </div>
-
-            <div class="about-cta">
-              <a class="pill primary" href="mailto:nishtha.ladi@gmail.com">Email</a>
-              <a class="pill" href="https://www.linkedin.com/in/nishtha-ladi-005232318" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a class="pill" href="1 Page Resume_Nishtha Ladi_Sep25.docx.pdf" target="_blank" rel="noreferrer">Resume</a>
-            </div>
+            <p class="section-label" style="color:rgba(255,255,255,.55)">05 / Beyond engineering</p>
+            <h2 style="margin-top:14px">Dance has always been part of how I lead and create.</h2>
+            <p>I’m classically trained in Odissi and have led BU Jalwa, Boston University’s competitive Bollywood fusion dance team. I’ve been recognized as Best Lead twice.</p>
           </div>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <h3>Interests</h3>
-            <p>Agentic systems • LLMs • ML for systems/HPC • Computer vision • Product + engineering leadership</p>
-            <div class="proj-meta">
-              <span class="tag">Agentic AI</span>
-              <span class="tag">HPC</span>
-              <span class="tag">Computer Vision</span>
-              <span class="tag">Systems</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Currently</h3>
-            <p>Building and researching in energy-efficient computing, while shipping projects that blend ML with real workflows.</p>
-            <div class="proj-meta">
-              <span class="tag">Research</span>
-              <span class="tag">Shipping</span>
-              <span class="tag">Impact</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="tab-panel" hidden>
-      <h2 class="panel-title">Projects</h2>
-      <p class="subnote">A few things I’ve built and am actively building.</p>
-
-      <div class="grid">
-        <div class="card">
-          <h3><a class="proj-link" href="#" target="_blank" rel="noreferrer">Contract Analysis <small>(link soon)</small></a></h3>
-          <p>NLP pipeline to extract, categorize, and analyze clauses from contracts—surfacing risks, obligations, and compliance markers for faster review. Report/code on request.</p>
-          <div class="proj-meta">
-            <span class="tag">NLP</span><span class="tag">Information Extraction</span><span class="tag">Risk Review</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3><a class="proj-link" href="#" target="_blank" rel="noreferrer">Cricket Fantasy Auction Game <small>(link soon)</small></a></h3>
-          <p>Auction-based fantasy cricket with live match integration; real-time points update from performance feeds.</p>
-          <div class="proj-meta">
-            <span class="tag">Web App</span><span class="tag">Real-time</span><span class="tag">Game Systems</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3><a class="proj-link" href="https://github.com/NishthaLadi-21/Fugaku.git" target="_blank" rel="noreferrer">Fugaku Dataset Feature Prediction</a></h3>
-          <p>ML models to predict performance features of supercomputer jobs; explored feature selection &amp; regression for scalable HPC workloads.</p>
-          <div class="proj-meta">
-            <span class="tag">HPC</span><span class="tag">ML</span><span class="tag">Regression</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3><a class="proj-link" href="https://github.com/NishthaLadi/Comp_proj_Othello" target="_blank" rel="noreferrer">Othello Game</a></h3>
-          <p>One- and two-player Othello with board logic, move validation, and basic AI strategies.</p>
-          <div class="proj-meta">
-            <span class="tag">Game AI</span><span class="tag">Logic</span><span class="tag">CS Fundamentals</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3><a class="proj-link" href="EC 327 Project_Group 4.pdf" target="_blank" rel="noreferrer">“Bug Fixing” Tetris Game</a></h3>
-          <p>Course project: Tetris implementation + bug fixing write-up.</p>
-          <div class="proj-meta">
-            <span class="tag">Course Project</span><span class="tag">Debugging</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3><a class="proj-link" href="EC 311 - Final Project.pdf" target="_blank" rel="noreferrer">Digital Clock (Verilog)</a></h3>
-          <p>Digital clock design in Verilog (final project documentation).</p>
-          <div class="proj-meta">
-            <span class="tag">Verilog</span><span class="tag">Digital Design</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3><a class="proj-link" href="Air Quality Surveillance Data Analysis.pdf" target="_blank" rel="noreferrer">Air Quality Surveillance Data Analysis</a></h3>
-          <p>Analysis of air quality surveillance data (report PDF).</p>
-          <div class="proj-meta">
-            <span class="tag">Data Analysis</span><span class="tag">Visualization</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>
-            <a class="proj-link" href="EK210-Final_Presentation.pdf" target="_blank" rel="noreferrer">Smart Runner 4000</a>
-            <small> · </small>
-            <a class="proj-link" href="EK210_FinalReport.pdf" target="_blank" rel="noreferrer"><small>Project Report</small></a>
-          </h3>
-          <p>Final presentation + report for Smart Runner 4000.</p>
-          <div class="proj-meta">
-            <span class="tag">Systems</span><span class="tag">Design</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3><a class="proj-link" href="Ek131+-+FinalDemo+-+Nishtha+Ladi.pdf" target="_blank" rel="noreferrer">Temperature Sensor Box</a></h3>
-          <p>Demo and documentation for a temperature sensor box project.</p>
-          <div class="proj-meta">
-            <span class="tag">Sensors</span><span class="tag">Embedded</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BU (empty for now) -->
-    <section id="bu" class="tab-panel" hidden>
-      <h2 class="panel-title">BU</h2>
-      <p class="subnote">Coming soon.</p>
-      <div class="empty">This section is intentionally empty for now.</div>
-    </section>
-
-    <!-- Dance -->
-    <section id="dance" class="tab-panel" hidden>
-      <h2 class="panel-title">Dance</h2>
-      <p class="subnote">Classical training + competitive Bollywood fusion.</p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>
-            <a class="proj-link" href="https://www.youtube.com/playlist?list=PLyPLzVFqJ4OjnjKPnJIZMFrw0ZDeAKmTk"
-               target="_blank" rel="noreferrer">
-              Odissi — Mancha Pravesh (2021)
-            </a>
-          </h3>
-          <p>
-            Playlist of 6 performances showcasing my Odissi training and my Mancha Pravesh in 2021.
-          </p>
-          <div class="proj-meta">
-            <span class="tag">Odissi</span>
-            <span class="tag">Classical</span>
-            <span class="tag">Performance</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>
-            <a class="proj-link" href="https://www.youtube.com/watch?v=U2fMY7DYcSQ&list=RDU2fMY7DYcSQ&start_radio=1"
-               target="_blank" rel="noreferrer">
-              BU Jalwa — Best Lead (x2)
-            </a>
-          </h3>
-          <p>
-            Captain of New England’s premier Bollywood Fusion Dance Team (BU Jalwa) — won the title of Best Lead twice.
-          </p>
-          <div class="proj-meta">
-            <span class="tag">Bollywood Fusion</span>
-            <span class="tag">Captain</span>
-            <span class="tag">Awards</span>
+          <div class="dance-links">
+            <a class="button" href="https://www.youtube.com/playlist?list=PLyPLzVFqJ4OjnjKPnJIZMFrw0ZDeAKmTk" target="_blank" rel="noreferrer">Odissi performances ↗</a>
+            <a class="button" href="https://www.youtube.com/watch?v=U2fMY7DYcSQ&list=RDU2fMY7DYcSQ&start_radio=1" target="_blank" rel="noreferrer">BU Jalwa ↗</a>
           </div>
         </div>
       </div>
@@ -501,33 +586,14 @@
   </main>
 
   <footer>
-    <div class="container">
-      <div>© <span id="year"></span> Nishtha Ladi</div>
-      <div><a href="mailto:nishtha.ladi@gmail.com">nishtha.ladi@gmail.com</a></div>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Nishtha Ladi</span>
+      <span><a href="mailto:ladi21@bu.edu">ladi21@bu.edu</a> · <a href="https://www.linkedin.com/in/nishtha-ladi-005232318" target="_blank" rel="noreferrer">LinkedIn</a></span>
     </div>
   </footer>
 
   <script>
-    // Simple tab switcher
-    const tabs = document.querySelectorAll(".tab");
-    const panels = document.querySelectorAll(".tab-panel");
-
-    tabs.forEach((btn) => btn.addEventListener("click", () => {
-      const id = btn.dataset.tab;
-      tabs.forEach((b) => b.classList.toggle("active", b === btn));
-      panels.forEach((p) => (p.hidden = p.id !== id));
-      history.replaceState(null, "", "#" + id); // deep-link to tab
-    }));
-
-    // Open correct tab if URL has #hash
-    const hash = (location.hash || "").replace("#", "");
-    if (hash) {
-      const target = document.querySelector(`.tab[data-tab="${hash}"]`);
-      if (target) target.click();
-    }
-
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-   
